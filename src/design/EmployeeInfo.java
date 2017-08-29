@@ -2,7 +2,7 @@ package design;
 
 import java.util.Scanner;
 
-public class EmployeeInfo{
+public class EmployeeInfo implements Employee{
 	
  /*This class can be implemented from Employee interface then add additional methods in EmployeeInfo class.
  * Also, Employee interface can be implemented into an abstract class.So create an Abstract class
@@ -19,22 +19,31 @@ public class EmployeeInfo{
 	 * declare few static and final fields and some non-static fields
 	 */
 	static String companyName;
-	
+	int totalSalary;
 	/*
 	 * You must implement the logic for below 2 methods and 
 	 * following 2 methods are prototype as well for other methods need to be design,
 	 * as you will come up with the new ideas.
 	 */
 	
+	public int getTotalSalary() {
+		return totalSalary;
+	}
+	public void setTotalSalary(int totalSalary) {
+		this.totalSalary = totalSalary;
+	}
 	/*
 	 * you must have multiple constructor.
 	 * Must implement below constructor.
 	 */
+	private int employeeId;
+	private String name;
 	public EmployeeInfo(int employeeId){
-		
+		this.employeeId = employeeId;
 	}
     public EmployeeInfo(String name, int employeeId){
-		
+    	this.employeeId = employeeId;
+    	this.name = name;
 	}
 	
 	/*
@@ -129,5 +138,28 @@ public class EmployeeInfo{
 			return date;
 
 		}
+	}
+	@Override
+	public int employeeId() {
+		return employeeId;
+	}
+	@Override
+	public String employeeName() {
+		return name;
+	}
+	@Override
+	public void assignDepartment() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public int calculateSalary() {
+		
+		return 0;
+	}
+	@Override
+	public void benefitLayout() {
+		// TODO Auto-generated method stub
+		
 	}
 }
